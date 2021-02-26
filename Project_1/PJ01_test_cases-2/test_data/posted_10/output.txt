@@ -1,0 +1,5 @@
+COMMAND: C 20
+COMMAND: R
+COMMAND: W
+Error: cannot open file for writing
+COMMAND: S
