@@ -39,7 +39,7 @@ int main(){
                     arr = new ELEMENT[n];
                     if(populateArray(arr)){ 
                         BuildHeap(heap, arr, arraySize);
-                        if(v == 1){
+                        if(v == 1 && g_counter > 0){
                             printf("Number of Heapify calls: %d\n", g_counter);
                         }
                         g_counter = 0;
@@ -60,7 +60,7 @@ int main(){
             case 'D': //HAS FLAG REMEMBER TO IMPLEMENT
                 //printf("COMMAND: %c\n", c);
                 ExtractMin(heap);
-                if(v == 1){
+                if(v == 1 && g_counter > 0){
                     printf("Number of Heapify calls: %d\n", g_counter);
                 }
                 g_counter = 0;

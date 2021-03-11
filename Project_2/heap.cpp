@@ -15,10 +15,10 @@ HEAP* Initialize(int n){
 }
 //Prints heap 
 void printHeap(HEAP* heap){
-    if(isHeapNull(heap) || heap->size < 1){ //check if heap is null
+    if(isHeapNull(heap) || heap->size == 0){ //check if heap is null
         printf("capacity=%d, ", heap->capacity);
         printf("size=%d\n", heap->size);
-        printf("Error: heap is NULL or empty\n");
+        //printf("Error: heap is NULL or empty1\n");
     }
     else{
         if(heap->size != 0){
