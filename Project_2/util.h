@@ -3,8 +3,9 @@
 
 #include "heap.h"
 
+extern int g_counter;
 
-int nextCommand(int *n, int *f);
+int nextCommand(int *n, int *f, int* v);
 int getArraySize();
 void freeMem(HEAP* heap, ELEMENT a[]);
 void freeMem(ELEMENT* e);

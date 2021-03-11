@@ -4,17 +4,16 @@
 #include "util.h"
 #include "heap.h"
 
-
 int main(){
     //Declare variables
     char c;
-    int f, n;
+    int f, n, v;
     int arraySize = 0;
     HEAP* heap = NULL;
     ELEMENT* arr = NULL;
     //Loop to take input from user
     while(1){
-        c = nextCommand(&n, &f);
+        c = nextCommand(&n, &f, &v);
         switch(c){
             case 's':
             case 'S': //Stop program
@@ -40,6 +39,10 @@ int main(){
                     arr = new ELEMENT[n];
                     if(populateArray(arr)){ 
                         BuildHeap(heap, arr, arraySize);
+                        if(v == 1){
+                            printf("Number of Heapify calls: %d\n", g_counter);
+                            g_counter = 0;
+                        }
                     }
                 }
                 break;
@@ -57,6 +60,10 @@ int main(){
             case 'D': //HAS FLAG REMEMBER TO IMPLEMENT
                 printf("COMMAND: %c\n", c);
                 ExtractMin(heap);
+                if(v == 1){
+                    printf("Number of Heapify calls: %d\n", g_counter);
+                    g_counter = 0;
+                }
                 break;
             case 'i':
             case 'I':

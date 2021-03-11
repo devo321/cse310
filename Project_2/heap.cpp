@@ -49,6 +49,7 @@ void BuildHeap(HEAP* heap, ELEMENT A[], int n){
 
 //Maintains Min-Heap Property
 void MinHeapify(HEAP* heap, int index){
+    g_counter++;
     int l = Left(index);
     int r = Right(index);
     int smallest = index;

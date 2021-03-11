@@ -6,15 +6,16 @@
 #include "heap.h"
 using namespace std;
 
+int g_counter = 0;
 //Gets input from user
-int nextCommand(int *n, int *f){
+int nextCommand(int *n, int *f, int* v){
     char c;
     while(1){
         scanf("%c", &c);
         if(c == ' ' || c == '\t' || c == '\n'){
             continue;
         }
-        if(c == 'S' || c == 's' || c == 'R' || c == 'r' || c == 'W' || c == 'w' || c == 'P' || c == 'p' || c == 'd' || c == 'D'){
+        if(c == 'S' || c == 's' ||  c == 'W' || c == 'w' || c == 'P' || c == 'p'){
             break;
         }
         if( c == 'C' || c == 'c'){
@@ -27,6 +28,10 @@ int nextCommand(int *n, int *f){
         }
         if(c == 'I' || c == 'i'){
             scanf("%d", n);
+            break;
+        }
+        if( c == 'R' || c == 'r' || c == 'D' || c == 'd'){
+            scanf("%d", v);
             break;
         }
         else{
