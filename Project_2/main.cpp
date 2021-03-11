@@ -17,17 +17,17 @@ int main(){
         switch(c){
             case 's':
             case 'S': //Stop program
-                printf("COMMAND: %c\n",c);
+                //printf("COMMAND: %c\n",c);
                 freeMem(heap, arr);
                 exit(0);
             case 'c':
             case 'C': //Init heap
-                printf("COMMAND: %c %d\n", c, n);
+                //printf("COMMAND: %c %d\n", c, n);
                 heap = Initialize(n);
                 break; 
             case 'r':
             case 'R': //open file for reading  HAS FLAG REMEMBER TO IMPLEMENT
-                printf("COMMAND: %c\n", c);
+                //printf("COMMAND: %c\n", c);
                 arraySize = getArraySize();
                 if(arraySize == -1){
                     break;
@@ -53,12 +53,12 @@ int main(){
                 break;
             case 'w':
             case 'W': //Open file for writing
-                printf("COMMAND: %c\n", c);
+                //printf("COMMAND: %c\n", c);
                 writeHeap(heap);
                 break;
             case 'd':
             case 'D': //HAS FLAG REMEMBER TO IMPLEMENT
-                printf("COMMAND: %c\n", c);
+                //printf("COMMAND: %c\n", c);
                 ExtractMin(heap);
                 if(v == 1){
                     printf("Number of Heapify calls: %d\n", g_counter);
@@ -67,7 +67,7 @@ int main(){
                 break;
             case 'i':
             case 'I':
-                printf("COMMAND: %c\n",c);
+                //printf("COMMAND: %c\n",c);
                 //insert
                 {
                     ELEMENT* insertElement = new ELEMENT;
@@ -78,7 +78,7 @@ int main(){
                 break;
             case 'k':
             case 'K':
-                printf("COMMAND: %c\n",c);
+                //printf("COMMAND: %c\n",c);
                 DecreaseKey(heap, n, f);
                 break;
             default:
