@@ -48,7 +48,7 @@ int main(){
                 break;
             case 'p':
             case 'P': //print heap
-                printf("COMMAND: %c\n", c);
+                //printf("COMMAND: %c\n", c);
                 printHeap(heap);
                 break;
             case 'w':
