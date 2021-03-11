@@ -6,7 +6,8 @@
 #include "heap.h"
 using namespace std;
 
-int g_counter = 0;
+int g_counter = 0; //Initializes global counter
+
 //Gets input from user
 int nextCommand(int *n, int *f, int* v){
     char c;
@@ -74,7 +75,7 @@ void freeMem(HEAP* heap, ELEMENT a[]){
     }
     
 }
-
+//Frees memory of given element e
 void freeMem(ELEMENT* e){
     if (e != NULL){
         delete e;
@@ -135,7 +136,7 @@ void writeHeap(HEAP* heap){
         printf("Error: cannot write\n");
     }
 }
-
+//Prints the array held in heap, used for debugging purposes while writing
 void PrintArray(HEAP* heap){
     for(int i = 0; i < heap->capacity; i++){
         std::cout << heap->H[i].key << " ";

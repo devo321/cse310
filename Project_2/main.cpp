@@ -17,17 +17,14 @@ int main(){
         switch(c){
             case 's':
             case 'S': //Stop program
-                //printf("COMMAND: %c\n",c);
                 freeMem(heap, arr);
                 exit(0);
             case 'c':
             case 'C': //Init heap
-                //printf("COMMAND: %c %d\n", c, n);
                 heap = Initialize(n);
                 break; 
             case 'r':
-            case 'R': //open file for reading  HAS FLAG REMEMBER TO IMPLEMENT
-                //printf("COMMAND: %c\n", c);
+            case 'R': //open file for reading, if flag is 1, print number of Heapify calls
                 arraySize = getArraySize();
                 if(arraySize == -1){
                     break;
@@ -48,17 +45,14 @@ int main(){
                 break;
             case 'p':
             case 'P': //print heap
-                //printf("COMMAND: %c\n", c);
                 printHeap(heap);
                 break;
             case 'w':
             case 'W': //Open file for writing
-                //printf("COMMAND: %c\n", c);
                 writeHeap(heap);
                 break;
             case 'd':
-            case 'D': //HAS FLAG REMEMBER TO IMPLEMENT
-                //printf("COMMAND: %c\n", c);
+            case 'D': //Deletes minimum value, if flag is 1, print number of Heapify calls
                 ExtractMin(heap);
                 if(v == 1 && g_counter > 0){
                     printf("Number of Heapify calls: %d\n", g_counter);
@@ -66,9 +60,7 @@ int main(){
                 g_counter = 0;
                 break;
             case 'i':
-            case 'I':
-                //printf("COMMAND: %c\n",c);
-                //insert
+            case 'I': //Inserts dynamically allocated element into heap
                 {
                     ELEMENT* insertElement = new ELEMENT;
                     insertElement->key = n;
@@ -77,8 +69,7 @@ int main(){
                 }
                 break;
             case 'k':
-            case 'K':
-                //printf("COMMAND: %c\n",c);
+            case 'K': //Decreases specifiied key in heap
                 DecreaseKey(heap, n, f);
                 break;
             default:
@@ -87,5 +78,3 @@ int main(){
     }
     exit(0);
 }
-
-

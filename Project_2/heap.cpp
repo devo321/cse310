@@ -15,10 +15,9 @@ HEAP* Initialize(int n){
 }
 //Prints heap 
 void printHeap(HEAP* heap){
-    if(isHeapNull(heap) || heap->size == 0){ //check if heap is null
+    if(isHeapNull(heap) || heap->size == 0){ //check if heap is null or = 0
         printf("capacity=%d, ", heap->capacity);
         printf("size=%d\n", heap->size);
-        //printf("Error: heap is NULL or empty1\n");
     }
     else{
         if(heap->size != 0){
@@ -70,7 +69,7 @@ void MinHeapify(HEAP* heap, int index){
     }
 }
 
-
+//Returns and removes minimum value from the Heap
 void ExtractMin(HEAP* heap){
     if(heap->size < 1 || isHeapNull(heap)){
         printf("Error: heap is NULL or empty\n");
@@ -83,7 +82,7 @@ void ExtractMin(HEAP* heap){
         printf("Deleted key: %d\n", min);
     }
 }
-
+//Decreases the value of the key at specified index in the Heap
 void DecreaseKey(HEAP* heap, int index, int value){
     if(value > heap->H[index].key || isHeapNull(heap) || index < 1 || index > heap->size){
         printf("Error: invalid call to DecreaseKey\n");
@@ -98,7 +97,7 @@ void DecreaseKey(HEAP* heap, int index, int value){
         }
     }
 }
-
+//Inserts element e into Heap
 void Insert(HEAP* heap, ELEMENT* e){
     int heapSize = heap->size + 1;
     if(heapSize > heap->capacity){
@@ -111,14 +110,15 @@ void Insert(HEAP* heap, ELEMENT* e){
     }
 }
 
+//Returns the parent of the node
 int Parent(int i){
     return i/2;
 }
-
+//Returns the node to the left
 int Left(int i){
     return (2*i);
 }
-
+//Returns the node to the right
 int Right(int i){
     return (2*i + 1);
 }
