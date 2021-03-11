@@ -15,11 +15,13 @@ HEAP* Initialize(int n){
 }
 //Prints heap 
 void printHeap(HEAP* heap){
-    if(isHeapNull(heap)){ //check if heap is null
-        printf("Error: heap is null\n");
+    if(isHeapNull(heap) || heap->size < 1){ //check if heap is null
+        printf("capacity=%d, ", heap->capacity);
+        printf("size=%d\n", heap->size);
+        printf("Error: heap is NULL or empty\n");
     }
     else{
-        if(/*heap->size != 0*/ true){
+        if(heap->size != 0){
             printf("capacity=%d, ", heap->capacity);
             printf("size=%d\n", heap->size);
             for(int i = 1; i <= heap->size; i++){

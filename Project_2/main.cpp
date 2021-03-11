@@ -41,8 +41,8 @@ int main(){
                         BuildHeap(heap, arr, arraySize);
                         if(v == 1){
                             printf("Number of Heapify calls: %d\n", g_counter);
-                            g_counter = 0;
                         }
+                        g_counter = 0;
                     }
                 }
                 break;
@@ -62,8 +62,8 @@ int main(){
                 ExtractMin(heap);
                 if(v == 1){
                     printf("Number of Heapify calls: %d\n", g_counter);
-                    g_counter = 0;
                 }
+                g_counter = 0;
                 break;
             case 'i':
             case 'I':
